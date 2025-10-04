@@ -1,79 +1,140 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-
-<title>网站</title>
-
-<Link Rel="SHORTCUT ICON" href="https://gitee.com/th_114/png/raw/master/1.png">
-
-<body background="https://gitee.com/th_114/png/raw/master/background.jpg"
-
-style=" background-repeat:no-repeat ;
-
-background-size:100% 100%;
-
-background-attachment: fixed;"
-
->
-
-<style>
-
-  #canvas {
-                position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    cursor: none;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        .content{
-      position: absolute;
-    z-index: 11;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-}
-.splash{
-  position: relative;
-  }
-  img#qq {
-    width: 128px;
-    background-size: cover;
-    border-radius: 200px;
-    box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
-    border: 3px solid #00a0ff;
-    opacity: 1;
-    margin: 0 auto;
-	margin-bottom: 20px;
-	transition: all 1.0s;  
-}
-#qq:hover {
-    box-shadow: 0 0 10px #fff;
-    -webkit-box-shadow: 0 0 19px #fff;
-    transform:rotate(360deg);
-    -ms-transform:rotate(360deg); 	/* IE 9 */
-    -moz-transform:rotate(360deg); 	/* Firefox */
-    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
-    -o-transform:rotate(360deg); 	/* Opera */
-    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-</style>
-
-
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #e0e7ff;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .title {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #667eea;
+            font-size: 14px;
+        }
+        
+        .icon {
+            margin-right: 5px;
+        }
+        
+        .skills {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .skills h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
-         
-           
-            
-                
-              
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-
+<body>
+    <div class="profile-card">
+        <img src="https://gitee.com/th_114/png/raw/master/1.png" alt="个人头像" class="profile-img">
+        <h1>？ ？ ？</h1>
+        <div class="title">一名初中生</div>
+        <p class="description">
+            拥有5年前端开发经验，专注于创建优雅、高效的用户界面。
+            热衷于学习新技术，善于解决复杂问题。目前在一家科技公司担任高级前端工程师。
+        </p>
+        
+        <div class="skills">
+            <h3>技能专长</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">TVBox的个人版本修改</span>
+                <span class="skill-tag">部署系统</span>
+                <span class="skill-tag">加钠</span>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <span>whj-15350654619@outlook.com</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
