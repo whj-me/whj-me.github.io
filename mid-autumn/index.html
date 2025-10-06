@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中秋佳节</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(to bottom, #0a0a2a, #1a1a4a);
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        header {
+            margin: 30px 0;
+        }
+        
+        .moon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            background: radial-gradient(circle at 30% 30%, #fff9c4, #ffeb3b);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 235, 59, 0.7);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .moon::before, .moon::after {
+            content: '';
+            position: absolute;
+            background: rgba(200, 180, 60, 0.3);
+            border-radius: 50%;
+        }
+        
+        .moon::before {
+            width: 30px;
+            height: 30px;
+            top: 40px;
+            left: 50px;
+        }
+        
+        .moon::after {
+            width: 20px;
+            height: 20px;
+            top: 80px;
+            left: 120px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            color: #ffeb3b;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .customs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .custom {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 15px;
+            width: 170px;
+            transition: transform 0.3s ease;
+        }
+        
+        .custom:hover {
+            transform: translateY(-5px);
+        }
+        
+        .custom-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .poem {
+            font-style: italic;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #ffeb3b;
+        }
+        
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdbdbd;
+            width: 100%;
+            text-align: center;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @media (max-width: 600px) {
+            .moon {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="moon"></div>
+            <h1>中秋佳节</h1>
+            <p class="subtitle">月圆人团圆 · 千里共婵娟</p>
+        </header>
+        
+        <div class="content">
+            <h2>中秋节的由来</h2>
+            <p>中秋节，又称月夕、秋节、仲秋节、八月节、八月会、追月节、玩月节、拜月节或团圆节，是流行于中国众多民族与汉字文化圈诸国的传统文化节日，时在农历八月十五，因其恰值三秋之半，故名中秋。</p>
+            <p>中秋节始于唐朝初年，盛行于宋朝，至明清时，已成为与春节齐名的中国传统节日之一。受中华文化的影响，中秋节也是东亚和东南亚一些国家尤其是当地的华人华侨的传统节日。</p>
+        </div>
+        
+        <div class="content">
+            <h2>中秋习俗</h2>
+            <div class="customs">
+                <div class="custom">
+                    <div class="custom-icon">🌕</div>
+                    <h3>赏月</h3>
+                    <p>家人团聚，共同欣赏皎洁明月。</p>
+                </div>
+                <div class="custom">
+                    <div class="custom-icon">🥮</div>
+                    <h3>吃月饼</h3>
+                    <p>圆圆的月饼寓意团圆美满。</p>
+                </div>
+                <div class="custom">
+                    <div class="custom-icon">🏮</div>
+                    <h3>提灯笼</h3>
+                    <p>孩子们提灯笼游玩，增添节日气氛。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>中秋诗词</h2>
+            <div class="poem">
+                <p>《水调歌头·明月几时有》</p>
+                <p>明月几时有？把酒问青天。</p>
+                <p>不知天上宫阙，今夕是何年。</p>
+                <p>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。</p>
+                <p>起舞弄清影，何似在人间。</p>
+                <p style="margin-top: 10px;">——苏轼</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>中秋佳节 · 愿您与家人团圆幸福 · 共享天伦之乐</p>
+            <p>© 2023 中秋节主题页面</p>
+        </footer>
+    </div>
+</body>
+</html>
