@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片 + 音乐展示</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 禁止滚动条 */
+            background-color: #000; /* 可选：深色背景增强对比度 */
+        }
+        img {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* 保持比例并填充整个视窗 */
+        }
+        audio {
+            display: none; /* 隐藏音频播放器 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 显示图片 -->
+    <img src="background.jpg" alt="展示图片">
+    
+    <!-- 播放音乐 -->
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+    </audio>
+</body>
+</html>
