@@ -1,11 +1,11 @@
 {
-  "spider": ".\tvbox.jar",
+  "spider": "https://raw.bgithub.xyz/whj-me/whj-me.github.io/refs/heads/main/tvbox.jar",
   "wallpaper": "自用测试，禁止传播",
 "lives":[
 {
     "name":"直播",
     "type":0,
-    "url":"https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt,https://gitee.com/th_114/tvbox/raw/master/tvlive.txt",
+    "url":"https://gh-proxy.com/https://raw.bgithub.xyz/develop202/migu_video/refs/heads/main/interface.txt,https://gitee.com/th_114/tvbox/raw/master/tvlive.txt",
     "epg":"http://cdn.1678520.xyz/epg/?ch={name}&date={date}",
     "logo":"https://py.nxog.eu.org/https://gitee.com/mytv-android/myTVlogo/raw/main/img/{name}.png",
     "playerType":2,
@@ -768,4 +768,5 @@
     "cms.qdwght.com",
     "api.htpan.net"
   ]
+
 }
