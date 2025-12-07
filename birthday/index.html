@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #ff6b8b;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .birthday-name {
+            color: #ff4081;
+            background: linear-gradient(45deg, #ff4081, #ff8a00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .message {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #555;
+            margin: 25px 0;
+        }
+        
+        .cake {
+            font-size: 4rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-10px); }
+        }
+        
+        .balloons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .balloon {
+            width: 50px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+            animation: float 5s infinite ease-in-out;
+        }
+        
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: #aaa;
+        }
+        
+        .balloon:nth-child(1) {
+            background-color: #ff4081;
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            background-color: #4caf50;
+            animation-delay: 0.5s;
+        }
+        
+        .balloon:nth-child(3) {
+            background-color: #2196f3;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .celebrate-btn {
+            background: linear-gradient(to right, #ff6b8b, #ff8a00);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .celebrate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>生日快乐！</h1>
+        
+        <div class="cake">🎂</div>
+        
+        <div class="birthday-name" id="name">王思佳</div>
+        
+        <p class="message">
+            在这特别的日子里，愿所有的幸福、所有的快乐、所有的温馨、所有的好运都围绕在你身边。
+        </p>
+        
+        <p class="message">
+            祝你生日快乐，愿你梦想成真，未来更加灿烂辉煌！
+        </p>
+        
+        <div class="balloons">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+        
+        <button class="celebrate-btn" id="celebrateBtn">点击庆祝！</button>
+        
+        <footer>
+            特别为你制作的生日祝福 ❤️
+        </footer>
+    </div>
+
+    <script>
+        // 获取姓名并更新
+        function updateName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name') || ;
+            document.getElementById('name').textContent = name;
+            document.title = `生日快乐，${name}！`;
+        }
+        
+        // 庆祝按钮功能
+        document.getElementById('celebrateBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').textContent;
+            
+            // 添加庆祝效果
+            const container = document.querySelector('.container');
+            container.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                container.style.transform = 'scale(1)';
+            }, 300);
+            
+            // 添加五彩纸屑效果
+            createConfetti();
+            
+            // 显示祝福语
+            alert(`🎉 ${name}，生日快乐！愿你的每一天都充满阳光和欢笑！🎉`);
+        });
+        
+        // 创建五彩纸屑效果
+        function createConfetti() {
+            const colors = ['#ff4081', '#4caf50', '#2196f3', '#ffeb3b', '#9c27b0'];
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-20px';
+                confetti.style.zIndex = '1000';
+                container.appendChild(confetti);
+                
+                // 动画
+                const animation = confetti.animate([
+                    { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate(${Math.random() * 100 - 50}px, 300px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 1000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // 页面加载时更新姓名
+        window.onload = updateName;
+    </script>
+</body>
+</html>
